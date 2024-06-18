@@ -1,0 +1,6 @@
+__pycache__
+.ruff_cache
+index/*
+tools/__pycache__
+nodes/__pycache__
+models/__pycache__

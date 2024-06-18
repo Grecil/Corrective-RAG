@@ -1,0 +1,11 @@
+streamlit
+langchain
+langchain_community
+langchain-core
+langchainhub
+langgraph
+tiktoken
+faiss-cpu
+duckduckgo_search
+unstructured
+unstructured[all-docs]
