@@ -9,8 +9,7 @@ An Implementation of this paper - https://arxiv.org/pdf/2401.15884 using LangCha
 
 ### Setup
 - Copy the repository
-- Use indexer.ipynb to crete FAISS index of your files.
-- Paste index.faiss and index.pkl files to index folder.
+- Use indexer.ipynb to create FAISS index of your files.
 - Run the app
   - Locally
     ```
