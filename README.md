@@ -2,8 +2,8 @@
 An Implementation of this paper - https://arxiv.org/pdf/2401.15884 using LangChain and LangGraph
 
 ### Requirements
-- Large Language Model (Change it in models/LLM. By default it used phi3 in ollama)
-- Embeddings Model (Change it in models/EM. By default it uses nomic-embed-text in ollama)
+- Large Language Model (Change it in models/LLM. By default it uses phi3 in ollama. You can use any model supported by langchain.)
+- Embeddings Model (Change it in models/EM. By default it uses nomic-embed-text in ollama. You can use any model supported by langchain.)
 - Python 3.10 (use other versions at your own risk) (skip if using docker)
 - Python libraries mentioned in requirements.txt (skip if using docker)
 
