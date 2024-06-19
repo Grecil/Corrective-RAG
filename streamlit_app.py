@@ -23,9 +23,9 @@ st.markdown(
     unsafe_allow_html=True,
 )
 indexed = False
-uploaded_file = st.file_uploader("Choose a PDF file")
+uploaded_file = st.file_uploader("Choose a PDF file",type=["pdf"])
 if uploaded_file:
-    temp_file = "./temp.pdf"
+    temp_file = f"./{uploaded_file.name}.pdf"
     with open(temp_file, "wb") as file:
         file.write(uploaded_file.getvalue())
         file_name = uploaded_file.name
