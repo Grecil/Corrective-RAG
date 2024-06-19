@@ -1,3 +1,4 @@
+opencv-python-headless
 streamlit
 langchain
 langchain-community
