@@ -8,7 +8,6 @@ def generate(state):
     def format_docs(docs):
         return "\n\n".join(doc.page_content for doc in docs)
 
-    generation = rag_chain.stream(
-        {"context": format_docs(documents), "question": question}
-    )
+    chain = rag_chain()
+    generation = chain.stream({"context": format_docs(documents), "question": question})
     return {"context": documents, "question": question, "generation": generation}

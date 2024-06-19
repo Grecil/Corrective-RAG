@@ -1,28 +1,37 @@
 import streamlit as st
-from graph import app
 from models.LLM import llm
+from tools.index_tool import indexer
+from graph import workflow
 
 st.set_page_config(page_title="Assistant", layout="centered")
 
-st.markdown("""
-    <style>
-        .reportview-container {
-            margin-top: -2em;
-        }
-        #MainMenu {visibility: hidden;}
-        .stDeployButton {display:none;}
-        footer {visibility: hidden;}
-        #stDecoration {display:none;}
-    </style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#         .reportview-container {
+#             margin-top: -2em;
+#         }
+#         #MainMenu {visibility: hidden;}
+#         .stDeployButton {display:none;}
+#         footer {visibility: hidden;}
+#         #stDecoration {display:none;}
+#     </style>
+# """, unsafe_allow_html=True)
 
 
 st.markdown(
     "<h1 style='text-align: center; color: white;'>ASSISTANT</h1> <br>",
     unsafe_allow_html=True,
 )
-
-on = st.toggle("Get Context from Files")
+indexed = False
+uploaded_file = st.file_uploader("Choose a PDF file")
+if uploaded_file:
+    temp_file = "./temp.pdf"
+    with open(temp_file, "wb") as file:
+        file.write(uploaded_file.getvalue())
+        file_name = uploaded_file.name
+    indexer(temp_file)
+    app = workflow.compile()
+    indexed = True
 
 
 def generate_llm_response(input_text):
@@ -45,11 +54,11 @@ def generate_rag_response(input_text):
         container.info(ans)
     ans += "\n\nSources - "
     for i in response["documents"]:
-        s = i.page_content
-        if len(s) > 110:
-            ans += "\n\n" + s[:40] + "." * 10 + s[-40:] + " " + str(i.metadata)
+        s = str(i.page_content).replace("\n", " ")
+        if len(s) > 100:
+            ans += "\n\n(" + s[:45] + "." * 10 + s[-45:] + ")\n" + str(i.metadata)
         else:
-            ans += "\n\n" + s + " " + str(i.metadata)
+            ans += "\n\n(" + s + ")\n" + str(i.metadata)
     container.info(ans)
 
 
@@ -57,7 +66,7 @@ with st.form("my_form"):
     text = st.text_area("Enter text:", "How can I help you?")
     submitted = st.form_submit_button("Submit")
     if submitted:
-        if on:
+        if indexed:
             generate_rag_response(text)
         else:
             generate_llm_response(text)

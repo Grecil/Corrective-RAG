@@ -6,10 +6,9 @@ def grade_documents(state):
     documents = state["documents"]
     filtered_docs = []
     web_search = "No"
+    grader = retrieval_grader()
     for d in documents:
-        score = retrieval_grader.invoke(
-            {"question": question, "document": d.page_content}
-        )
+        score = grader.invoke({"question": question, "document": d.page_content})
         grade = score["score"]
         if grade == "yes":
             filtered_docs.append(d)

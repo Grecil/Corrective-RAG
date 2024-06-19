@@ -1,3 +1,3 @@
-from langchain_community.chat_models.ollama import ChatOllama
+from langchain_google_genai.chat_models import ChatGoogleGenerativeAI
 
-llm = ChatOllama(model="phi3:3.8b-mini-128k-instruct-q4_K_S")
+llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key="key")

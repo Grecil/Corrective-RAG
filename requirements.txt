@@ -1,11 +1,12 @@
 streamlit
 langchain
-langchain_community
+langchain-community
 langchain-core
 langchainhub
+langchain-google-genai
 langgraph
 tiktoken
 faiss-cpu
 duckduckgo_search
 unstructured
-unstructured[all-docs]
+unstructured[pdf]

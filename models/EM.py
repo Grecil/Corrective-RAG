@@ -1,3 +1,5 @@
-from langchain_community.embeddings import OllamaEmbeddings
+from langchain_google_genai.embeddings import GoogleGenerativeAIEmbeddings
 
-embedding = OllamaEmbeddings(model="nomic-embed-text")
+embedding = GoogleGenerativeAIEmbeddings(
+    model="models/text-embedding-004", google_api_key="key"
+)
