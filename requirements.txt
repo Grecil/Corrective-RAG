@@ -1,3 +1,4 @@
+httpx
 streamlit
 langchain
 langchain-community
