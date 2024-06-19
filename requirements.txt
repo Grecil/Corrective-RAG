@@ -1,3 +1,4 @@
+opencv-contrib-python
 streamlit
 langchain
 langchain-community
