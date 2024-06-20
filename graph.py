@@ -9,7 +9,7 @@ from nodes.generate_node import generate
 from nodes.decision_node import decide_to_generate
 
 
-def app():
+def workflow_compiler():
     class GraphState(TypedDict):
         question: str
         generation: str
