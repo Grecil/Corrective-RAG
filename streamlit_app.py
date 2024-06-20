@@ -62,9 +62,10 @@ def generate_rag_response(input_text):
     for i in response["documents"]:
         s = str(i.page_content).replace("\n", " ")
         if len(s) > 100:
-            ans += "\n\n(" + s[:45] + "." * 10 + s[-45:] + ")\n" + " Source - " + i.metadata['source'] + " Page- " + i.metadata['page']
+            ans += "\n\n(" + s[:45] + "." * 10 + s[-45:] + ")\n"
         else:
-            ans += "\n\n(" + s + ")\n" + str(i.metadata)
+            ans += "\n\n(" + s + ")\n"
+        ans += "Source - " + i.metadata["source"] + " Page- " + str(i.metadata["page"])
     container.info(ans)
 
 
