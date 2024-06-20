@@ -21,4 +21,4 @@ An Implementation of this paper - https://arxiv.org/pdf/2401.15884 using LangCha
     docker build -t corrective-rag .
     docker run -p 8501:8501 corrective-rag
     ```
-#### Keywords - RAG, Corrective RAG, CRAG, LangChain, LangGraph, FAISS, Streamlit, Ollama, phi3, DuckDuckGo
+#### Check the app out here - https://corrective-rag.streamlit.app
