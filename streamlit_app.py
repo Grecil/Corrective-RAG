@@ -63,7 +63,7 @@ def generate_rag_response(input_text):
         s = str(i.page_content).replace("\n", " ")
         ans += f"\n\n{str(j+1)}. "
         if len(s) > 100:
-            ans += f"Document - ({s[45:]+"."*10+s[-45:]}) "
+            ans += f"Document - ({s[45:]}..........{s[-45:]}) "
         else:
             ans += f"Document - ({s}) "
         ans += f"Source - ({i.metadata['source']}) Page - ({i.metadata["page"]})"
