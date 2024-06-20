@@ -10,4 +10,4 @@ langgraph
 tiktoken
 faiss-cpu
 duckduckgo_search
-pypdf
+pymupdf
