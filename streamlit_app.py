@@ -59,13 +59,14 @@ def generate_rag_response(input_text):
         arr.append(token)
         container.info(ans)
     ans += "\n\nSources - "
-    for i in response["documents"]:
+    for j, i in enumerate(response["documents"]):
         s = str(i.page_content).replace("\n", " ")
+        ans += f"\n\n{str(j+1)}. "
         if len(s) > 100:
-            ans += "\n\n(" + s[:45] + "." * 10 + s[-45:] + ")\n"
+            ans += f"Document - ({s[45:]+"."*10+s[-45:]}) "
         else:
-            ans += "\n\n(" + s + ")\n"
-        ans += "Source - " + i.metadata["source"] + " Page- " + str(i.metadata["page"])
+            ans += f"Document - ({s}) "
+        ans += f"Source - ({i.metadata['source']}) Page - ({i.metadata["page"]})"
     container.info(ans)
 
 
