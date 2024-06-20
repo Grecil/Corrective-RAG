@@ -8,13 +8,13 @@ from nodes.grade_node import grade_documents
 from nodes.generate_node import generate
 from nodes.decision_node import decide_to_generate
 
+
 def app():
     class GraphState(TypedDict):
         question: str
         generation: str
         web_search: str
         documents: List[str]
-
 
     workflow = StateGraph(GraphState)
 
