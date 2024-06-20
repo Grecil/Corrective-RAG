@@ -24,9 +24,9 @@ An Implementation of this paper - https://arxiv.org/pdf/2401.15884 using LangCha
 #### Check the app out here - https://corrective-rag.streamlit.app
 
 ### To-do (contributions are welcome)
-[ ] Use Hybrid Search
-[ ] Change VectorDB to Pinecone
-[ ] Allow Users to Chat
-[ ] Maintain Chat History for each user
-[ ] Improve Theming
-[ ] DOCX, XLSX, PPTX, CSV, TXT  support.
+- [ ] Use Hybrid Search
+- [ ] Change VectorDB to Pinecone
+- [ ] Allow Users to Chat
+- [ ] Maintain Chat History for each user
+- [ ] Improve Theming
+- [ ] DOCX, XLSX, PPTX, CSV, TXT  support.
