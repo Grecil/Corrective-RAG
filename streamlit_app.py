@@ -1,7 +1,7 @@
 import streamlit as st
 from models.LLM import llm
 from tools.index_tool import indexer
-from graph import workflow
+from graph import app
 
 st.set_page_config(page_title="Assistant", layout="centered")
 
@@ -36,7 +36,7 @@ if uploaded_file:
         file.write(uploaded_file.getvalue())
         file_name = uploaded_file.name
     indexer(temp_file)
-    app = workflow.compile()
+    app = app()
     indexed = True
 
 
