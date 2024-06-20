@@ -22,3 +22,11 @@ An Implementation of this paper - https://arxiv.org/pdf/2401.15884 using LangCha
     docker run -p 8501:8501 corrective-rag
     ```
 #### Check the app out here - https://corrective-rag.streamlit.app
+
+### To-do (contributions are welcome)
+[ ] Use Hybrid Search
+[ ] Change VectorDB to Pinecone
+[ ] Allow Users to Chat
+[ ] Maintain Chat History for each user
+[ ] Improve Theming
+[ ] DOCX, XLSX, PPTX, CSV, TXT  support.
