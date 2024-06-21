@@ -66,7 +66,9 @@ def generate_rag_response(input_text):
             ans += f"Document - ({s[:45]}..........{s[-45:]}) "
         else:
             ans += f"Document - ({s}) "
-        ans += f"Source - ({i.metadata['source']}) Page - ({i.metadata['page']})"
+        ans += f"Source - ({i.metadata['source']}) "
+        if "page" in i.metadata:
+            ans += f"Page - ({i.metadata['page']}) "
     container.info(ans)
 
 
