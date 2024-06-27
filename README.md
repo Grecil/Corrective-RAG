@@ -10,7 +10,6 @@ An Implementation of this paper - https://arxiv.org/pdf/2401.15884 using LangCha
 ### Setup
 - Copy the repository
 - Change LLM and EM in models.
-- Use indexer.ipynb to create FAISS index of your files.
 - Run the app
   - Locally
     ```
