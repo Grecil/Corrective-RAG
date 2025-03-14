@@ -4,8 +4,8 @@ langchain
 langchain-community
 langchain-core
 langchainhub
-google-generativeai==0.5.4
-langchain-google-genai==1.0.3
+google-generativeai
+langchain-google-genai
 langgraph
 tiktoken
 faiss-cpu
